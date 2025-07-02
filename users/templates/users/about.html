@@ -1,0 +1,75 @@
+{% extends 'users/home.html' %}
+
+{% load static %}
+
+{% block content %}
+    <div class="about-container">
+        <div class="about-header">
+            <h1>About Petopia </h1>
+            <p>Your One-Stop Solution for Pet Products & Veterinary Consultations</p>
+        </div>
+
+        <div class="about-content">
+            <div class="about-section">
+                <h2>Our Mission</h2>
+                <p>
+                    At <strong>Petopia</strong>, we believe that pets deserve the best care and products.  
+                    Our mission is to provide a seamless platform where pet owners can find high-quality pet products and connect with professional veterinarians for expert consultations.
+                </p>
+            </div>
+
+            <div class="about-section">
+                <h2>What We Offer</h2>
+                <ul>
+                    <li>🛍️ A wide range of pet products, including food, accessories, and grooming essentials.</li>
+                    <li>👨‍⚕️ Easy booking of veterinarian consultations for expert advice on pet health.</li>
+                    <li>💬 A friendly community forum for pet owners to share experiences and tips.</li>
+                    <li>🔒 Secure payments and trusted vendors to ensure the best for your furry friends.</li>
+                </ul>
+            </div>
+
+            <div class="about-section">
+                <h2>For Veterinarians</h2>
+                <p>
+                    If you are a veterinarian, <strong>Petopia</strong> helps you expand your reach and connect with pet owners in need of expert guidance.  
+                    By joining our platform, you can:
+                </p>
+                <ul>
+                    <li>📅 Offer consultation bookings online.</li>
+                    <li>📢 Build your professional presence and reach more pet owners.</li>
+                    <li>📈 Grow your client base without geographical limitations.</li>
+                </ul>
+                <p class="vet-signup">
+                    <strong>Ready to make a difference?</strong> <a href="{% url 'vet' %}">Join as a Veterinarian</a> today!
+                </p>
+            </div>
+
+            <div class="about-section">
+                <h2>How It Works</h2>
+                <p>
+                    To ensure a smooth experience, we require users to create an account.  
+                    Once logged in, you can:
+                </p>
+                <ul>
+                    <li>🛒 Browse and purchase pet products.</li>
+                    <li>📅 Book a consultation with a certified veterinarian.</li>
+                    <li>📢 Participate in community discussions and forums.</li>
+                </ul>
+                <p class="login-prompt">
+                    <strong>New here?</strong> <a href="{% url 'register' %}">Create an account</a> to get started.  
+                    Already a member? <a href="{% url 'login' %}">Login</a> to access all features!
+                </p>
+            </div>
+
+            <div class="about-section">
+                <h2>Our Vision</h2>
+                <p>
+                    At Petopia, we are dedicated to making life easier for pet lovers.  
+                    Whether it’s finding the right products, booking veterinary care, or getting support from a community of pet enthusiasts,  
+                    we ensure you never have to worry about your pet’s well-being.  
+                    Your pet’s happiness is our top priority! ❤️🐶🐱
+                </p>
+            </div>
+        </div>
+    </div>
+{% endblock %}

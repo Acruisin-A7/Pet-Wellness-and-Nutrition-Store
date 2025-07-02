@@ -1,0 +1,12 @@
+{% extends 'users/base.html' %}
+{% block content %}
+<div class="container">
+    <h2>🎉 Order Placed Successfully!</h2>
+    <p>Thank you for your order, {{ order.user.username }}.</p>
+    <p><strong>Order ID:</strong> {{ order.id }}</p>
+    <p><strong>Total Amount:</strong> ₹{{ order.total_price }}</p>
+    <p><strong>Payment Status:</strong> Paid</p>
+
+    <a href="{% url 'download_invoice' order.id %}" class="btn btn-primary">Download Invoice</a>
+</div>
+{% endblock %}

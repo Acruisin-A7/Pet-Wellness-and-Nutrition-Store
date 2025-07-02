@@ -1,0 +1,60 @@
+{% extends 'users/admin_dashboard.html' %}
+{% block title %}Sales Report{% endblock %}
+
+{% block content %}
+<div class="sales-report-container">
+    <h2>
+        Sales Report for 
+        {% if selected_month %}
+            {{ selected_month_name }} {{ selected_year }}
+        {% else %}
+            {{ selected_year }} (All Months)
+        {% endif %}
+    </h2>
+
+    <!-- Dropdown Form for Filtering -->
+    
+    
+    <!-- Download Buttons -->
+    
+    
+
+    <div class="sales-summary">
+        <div class="sales-card revenue">
+            <h4>Total Sales Revenue</h4>
+            <div class="value">₹{{ total_sales }}</div>
+        </div>
+
+        <div class="sales-card orders">
+            <h4>Completed Orders</h4>
+            <div class="value">{{ completed_orders }}</div>
+        </div>
+
+        <div class="sales-card refunds">
+            <h4>Refunded Orders</h4>
+            <div class="value">{{ refunded_orders }}</div>
+        </div>
+    </div>
+</div>
+<br>
+<form method="GET">
+    <input type="hidden" name="year" value="{{ selected_year }}">
+    <input type="hidden" name="month" value="{{ selected_month }}">
+    
+    <button type="submit" name="download" value="csv" class="btn btn-primary">Download CSV</button>
+    <button type="submit" name="download" value="pdf" class="btn btn-success">Download PDF</button>
+</form>
+
+<style>
+    .filter-form {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+    .form-control {
+        padding: 5px;
+        font-size: 16px;
+    }
+</style>
+
+{% endblock %}

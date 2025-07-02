@@ -1,0 +1,40 @@
+{% extends "users/home.html" %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/forum.css' %}">
+<div class="forum-container">
+    <div class="forum-post-detail">
+        <h1 class="forum-post-title">{{ post.title }}</h1>
+        <p class="forum-post-content">{{ post.content }}</p>
+        <p class="forum-post-meta"><strong>By:</strong> {{ post.user.username }} | {{ post.created_at }}</p>
+    </div>
+
+    <div class="forum-replies">
+        <h2>Replies 📝</h2>
+        <ul class="reply-list">
+            {% for reply in replies %}
+            <li class="reply-item">
+                <p>{{ reply.content }}</p>
+                <small class="reply-meta">by {{ reply.user.username }} | {{ reply.created_at }}</small>
+            </li>
+            {% empty %}
+            <p class="empty-message">No replies yet.</p>
+            {% endfor %}
+        </ul>
+    </div>
+
+    {% if user.is_authenticated %}
+    <div class="reply-form-container">
+        <h3>Reply to this post</h3>
+        <form method="post" class="reply-form">
+            {% csrf_token %}
+            {{ reply_form.as_p }}
+            <button type="submit" class="btn reply-btn">Post Reply</button>
+        </form>
+    </div>
+    {% else %}
+    <p class="login-prompt"><a href="{% url 'login' %}">Login</a> to reply.</p>
+    {% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends 'users/admin_dashboard.html' %}
+{% load static %}
+
+{% block content %}
+<h1>🐾 Manage Categories</h1>
+
+<!-- Add New Category Form -->
+<div class="category-form">
+    <h3>Add New Category</h3>
+    <form method="POST">
+        {% csrf_token %}
+        <label for="category_name">Name:</label>
+        <input type="text" id="category_name" name="name" required>
+        <button type="submit" class="category-add-btn">➕ Add Category</button>
+    </form>
+</div>
+
+{% if messages %}
+    {% for message in messages %}
+        <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+    {% endfor %}
+{% endif %}
+
+<!-- Existing Categories List -->
+<div class="category-list">
+    <h3>Existing Categories</h3>
+    {% if categories %}
+        <ul>
+            {% for category in categories %}
+            <li>
+                <span class="category-name">{{ category.name }}</span>
+                <div class="category-actions">
+                    <a href="{% url 'edit_category' category.id %}" class="category-edit-btn">✏️ Edit</a>
+                    <form method="POST" action="{% url 'delete_category' category.id %}" class="delete-form">
+                        {% csrf_token %}
+                        <button type="submit" class="category-delete-btn">❌ Delete</button>
+                    </form>
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p class="no-category">No categories found.</p>
+    {% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends 'users/admin_dashboard.html' %}
+{% load static %}
+
+{% block content %}
+
+
+<div class="review-moderation-container">
+    <h2 class="review-heading">All Product Reviews</h2>
+    <table class="review-table">
+        <thead>
+            <tr>
+                <th>User</th>
+                <th>Product</th>
+                <th>Rating</th>
+                <th>Comment</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for review in reviews %}
+            <tr>
+                <td>{{ review.user.username }}</td>
+                <td>{{ review.product.name }}</td>
+                <td>{{ review.rating }}/5</td>
+                <td>{{ review.comment }}</td>
+                <td>
+                    <form method="post" action="{% url 'delete_review' review.id %}">
+                        {% csrf_token %}
+                        <button type="submit" class="delete-review-btn">Delete</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

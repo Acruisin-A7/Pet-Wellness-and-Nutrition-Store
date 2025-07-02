@@ -1,0 +1,769 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Admin Dashboard Layout */
+.admin-dashboard {
+    display: flex;
+    height: 100vh;
+    background: linear-gradient(to right, #ff9800, #e68900);
+    color: white;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 260px;
+    background: #2c3e50;
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.sidebar h2 {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.admin-links {
+    width: 100%;
+}
+
+.admin-links a {
+    display: block;
+    text-align: center;
+    padding: 12px;
+    margin: 8px 0;
+    background: #34495e;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+.admin-links a:hover {
+    background: #1abc9c;
+}
+
+/* Logout Button */
+.logout-form {
+    width: 100%;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.logout-btn {
+    width: 90%;
+    padding: 12px;
+    background: #e74c3c;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+.logout-btn:hover {
+    background: #c0392b;
+}
+
+/* Main Content Area */
+.admin-content {
+    flex-grow: 1;
+    padding: 50px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+    color: #333; /* Dark text for readability */
+    border-radius: 10px;
+    margin: 20px;
+    overflow-y: auto;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Heading & Quote */
+h1 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #e68900;
+}
+
+.quote {
+    font-size: 16px;
+    font-style: italic;
+    color: #444;
+}
+
+/* Product Table */
+.product-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.product-table th, .product-table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: center;
+    color: #333;
+}
+
+.product-table th {
+    background: #ff9800;
+    color: white;
+}
+
+.edit-btn {
+    color: #1abc9c;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.delete-btn {
+    color: #e74c3c;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Forms */
+.product-form, .delete-form {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 100%;
+    margin: 0 auto; /* Center horizontally */
+}
+
+/* Improve Input Fields */
+.product-form input, 
+.product-form select, 
+.product-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Fix Buttons */
+.btn, .btn-danger, .cancel-btn, .back-btn {
+    display: inline-block;
+    padding: 12px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.btn {
+    background: #2c3e50;
+    color: white;
+}
+
+.btn-danger {
+    background: #e74c3c;
+    color: white;
+}
+
+.cancel-btn {
+    background: #34495e;
+    color: white;
+}
+
+.back-btn {
+    background: #1abc9c;
+    color: white;
+}
+
+.btn:hover, .btn-danger:hover, .cancel-btn:hover, .back-btn:hover {
+    opacity: 0.8;
+}
+
+
+
+/* Audit Logs Table */
+.audit-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+}
+
+.audit-table th, .audit-table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: center;
+    color: #333;
+}
+
+.audit-table th {
+    background: #ff9800;
+    color: white;
+    font-weight: bold;
+}
+
+.audit-table tbody tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+.audit-table tbody tr:hover {
+    background: #ffecb3;
+}
+
+/* No Data Message */
+.audit-table tbody td[colspan="6"] {
+    font-weight: bold;
+    color: #777;
+    padding: 20px;
+}
+
+
+/* Order Table Styling */
+.order-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.order-table th, .table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: center;
+    color: #333;
+}
+
+.order-table th {
+    background: #ff9800;
+    color: white;
+    font-weight: bold;
+}
+
+.order-table tbody tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+.order-table tbody tr:hover {
+    background: #ffecb3;
+}
+
+/* Manage Categories Styling */
+.category-form {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 600px;
+    margin: 20px auto;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.category-form h3 {
+    color: #ff9800;
+    margin-bottom: 15px;
+}
+
+.category-form input {
+    padding: 8px;
+    width: 70%;
+    margin-right: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.category-form .category-add-btn {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.category-form .category-add-btn:hover {
+    background-color: #555;
+}
+
+/* Existing Categories List */
+.category-list {
+    margin-top: 30px;
+}
+
+.category-list h3 {
+    text-align: center;
+    color: #ff9800;
+}
+
+.category-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+.category-list li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: white;
+    padding: 12px;
+    margin: 10px auto;
+    max-width: 600px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Unique Styling for Category Buttons */
+.category-actions {
+    display: flex;
+    gap: 10px;
+}
+
+/* Edit Button */
+.category-edit-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.category-edit-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Delete Button */
+.category-delete-btn {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.category-delete-btn:hover {
+    background-color: #a71d2a;
+}
+
+/* No Categories Message */
+.no-category {
+    text-align: center;
+    font-weight: bold;
+    color: #777;
+    padding: 20px;
+}
+
+
+/* Veterinarian Verification Page Styling */
+.vet-verification-container {
+    max-width: 1000px;
+    margin: 30px auto;
+    background: #fffef9;
+    padding: 30px 25px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 18px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.vet-verification-container h2 {
+    text-align: center;
+    color: #e68900;
+    margin-bottom: 25px;
+    font-size: 1.8rem;
+}
+
+.vet-table-wrapper {
+    overflow-x: auto;
+}
+
+/* Table Styling */
+.vet-table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.15);
+    background: white;
+}
+
+.vet-table th, .vet-table td {
+    padding: 14px;
+    border: 1px solid #ddd;
+    text-align: center;
+    color: #333;
+    vertical-align: middle;
+}
+
+.vet-table th {
+    background: #ff9800;
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.vet-table tbody tr:nth-child(even) {
+    background: #fdf7e3;
+}
+
+.vet-table tbody tr:hover {
+    background: #ffe9ba;
+}
+
+/* Certification Link */
+.cert-link {
+    color: #2980b9;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+.cert-link:hover {
+    color: #1c5980;
+}
+
+/* Button Styling */
+.action-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.approve-btn, .reject-btn {
+    padding: 8px 14px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+    display: inline-block;
+}
+
+.approve-btn {
+    background: #2c3e50;
+    color: white;
+}
+
+.reject-btn {
+    background: #e74c3c;
+    color: white;
+}
+
+.approve-btn:hover {
+    background: #34495e;
+}
+
+.reject-btn:hover {
+    background: #c0392b;
+}
+
+/* Flash messages */
+.messages .alert {
+    padding: 12px 16px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.alert.success {
+    background: #d4edda;
+    color: #155724;
+}
+
+.alert.error {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+/* Empty Table Message */
+.no-pending-vets {
+    font-weight: bold;
+    color: #777;
+    padding: 20px;
+    text-align: center;
+    font-size: 16px;
+}
+
+
+/* Refund Requests Table */
+.refund-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+}
+
+.refund-table th, .refund-table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: center;
+    color: #333;
+}
+
+.refund-table th {
+    background: #ff9800;
+    color: white;
+    font-weight: bold;
+}
+
+.refund-table tbody tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+.refund-table tbody tr:hover {
+    background: #ffecb3;
+}
+
+/* Refund Status Labels */
+.refund-status {
+    font-weight: bold;
+    padding: 6px 12px;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+.status-pending {
+    background: #f39c12; /* Orange */
+    color: white;
+}
+
+.status-approved {
+    background: #2ecc71; /* Green */
+    color: white;
+}
+
+.status-rejected {
+    background: #e74c3c; /* Red */
+    color: white;
+}
+
+/* Refund Action Buttons */
+.process-refund-btn {
+    background: #2c3e50;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s ease-in-out;
+}
+
+.process-refund-btn:hover {
+    background: #34495e;
+}
+
+/* Process Refund Form */
+.refund-form-container {
+    max-width: 600px;
+    margin: 20px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.refund-form-container h2 {
+    text-align: center;
+    color: #e68900;
+    margin-bottom: 20px;
+}
+
+.refund-form-container form {
+    text-align: center;
+}
+
+.refund-form-container button {
+    background: #2ecc71;
+    color: white;
+    padding: 10px 15px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.refund-form-container button:hover {
+    background: #27ae60;
+}
+
+.refund-form-container .btn-secondary {
+    background: #e74c3c;
+    color: white;
+    padding: 10px 15px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.refund-form-container .btn-secondary:hover {
+    background: #c0392b;
+}
+
+.sales-report-container {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.sales-report-container h2 {
+    color: #e68900;
+    font-size: 26px;
+    margin-bottom: 20px;
+}
+
+/* Sales Report Cards */
+.sales-summary {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.sales-card {
+    width: 250px;
+    padding: 20px;
+    color: white;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.sales-card:hover {
+    transform: scale(1.05);
+}
+
+.sales-card h4 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.sales-card .value {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Card Colors */
+.sales-card.revenue {
+    background: #28a745; /* Green for total sales */
+}
+
+.sales-card.orders {
+    background: #007bff; /* Blue for completed orders */
+}
+
+.sales-card.refunds {
+    background: #dc3545; /* Red for refunded orders */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .sales-summary {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .sales-card {
+        width: 90%;
+    }
+}
+
+
+.review-moderation-container {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #fffdf7;
+    border-radius: 12px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+}
+
+.review-heading {
+    text-align: center;
+    font-size: 1.8rem;
+    color: #e68900;
+    margin-bottom: 25px;
+}
+
+/* Styled table inspired by refund table */
+.review-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+}
+
+.review-table th,
+.review-table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: center;
+    color: #333;
+}
+
+.review-table th {
+    background: #ff9800;
+    color: white;
+    font-weight: bold;
+}
+
+.review-table tbody tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+.review-table tbody tr:hover {
+    background: #ffecb3;
+}
+
+/* Delete button styling */
+.delete-review-btn {
+    background: #e74c3c;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.delete-review-btn:hover {
+    background: #c0392b;
+}

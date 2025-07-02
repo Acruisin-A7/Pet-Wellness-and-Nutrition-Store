@@ -1,0 +1,54 @@
+{% extends "users/vet_dashboard.html" %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="manage-availability-container card shadow-lg p-4">
+        <h2 class="manage-availability-title text-center">
+            Manage Availability <i class="fa fa-clock-o"></i>
+        </h2>
+
+        {% if messages %}
+            <div class="alert alert-info">
+                {% for message in messages %}
+                    {{ message }}
+                {% endfor %}
+            </div>
+        {% endif %}
+
+        <form method="post">
+            {% csrf_token %}
+            
+            <!-- Select Available Days -->
+            <div class="availability-days">
+                <label class="form-label"><strong>Select Available Days:</strong></label>
+                {% for day in all_days %}
+                    <label>
+                        <input type="checkbox" name="available_days" value="{{ day }}" {% if day in selected_days %}checked{% endif %}>
+                        {{ day }}
+                    </label>
+                {% endfor %}
+            </div>
+
+            <label class="form-label"><strong>Enter Time in 24-Hour Format:</strong></label>
+
+            <!-- Start Time -->
+            <div class="time-inputs">
+                <label><strong>Start Time:</strong></label>
+                <input type="time" name="start_time" class="availability-input" required value="{{ availability.start_time|default:'' }}">
+            </div>
+
+            <!-- End Time -->
+            <div class="time-inputs">
+                <label><strong>End Time:</strong></label>
+                <input type="time" name="end_time" class="availability-input" required value="{{ availability.end_time|default:'' }}">
+            </div>
+
+            <!-- Buttons -->
+            <div class="text-center mt-3">
+                <button type="submit" class="save-availability-btn">Save Availability</button>
+                <a href="{% url 'vet_dashboard' %}" class="btn btn-secondary cancel-btn">Cancel</a>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

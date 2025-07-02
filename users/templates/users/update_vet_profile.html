@@ -1,0 +1,39 @@
+{% extends 'users/vet_dashboard.html' %}
+{% block content %}
+<div class="profile-form">
+    <h2>Update Your Profile</h2>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="form-group">
+            <label>First Name:</label>
+            <input type="text" name="first_name" value="Arun">
+        </div>
+        <div class="form-group">
+            <label>Last Name:</label>
+            <input type="text" name="last_name" value="Assadh">
+        </div>
+        <div class="form-group">
+            <label>Phone:</label>
+            <input type="text" name="phone" value="9757336677">
+        </div>
+        <div class="form-group">
+            <label>Experience (Years):</label>
+            <input type="number" name="experience" value="5">
+        </div>
+        <div class="form-group">
+            <label>Clinic Address:</label>
+            <textarea name="clinic_address">ewfjhiu</textarea>
+        </div>
+        <div class="file-upload">
+            <label>Additional Documents:</label>
+            <input type="file" name="documents">
+        </div>
+        <div class="file-upload">
+            <label>Profile Photo:</label>
+            <input type="file" name="profile_photo">
+        </div><br>
+        <button type="submit" class="save-availability-btn ">Update Profile</button>
+    </form>
+</div>
+</div>
+{% endblock %}

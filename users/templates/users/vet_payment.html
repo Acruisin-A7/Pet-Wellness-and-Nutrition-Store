@@ -1,0 +1,29 @@
+{% extends "users/home.html" %}
+
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/vet_payment.css' %}">
+
+<div class="vet-pay-container">
+    <h2>Confirm Appointment</h2>
+    <p>Veterinarian: <strong>{{ appointment.veterinarian.user.get_full_name }}</strong></p>
+    <p>Date: <strong>{{ appointment.date }}</strong></p>
+    <p>Time: <strong>{{ appointment.time_slot }}</strong></p>
+    <p>Fee: <strong>₹100</strong></p>
+    
+    <form id="razorpay-form">
+        <script src="https://checkout.razorpay.com/v1/checkout.js"
+            data-key="{{ razorpay_key }}"
+            data-amount="10000"
+            data-currency="INR"
+            data-order_id="{{ order_id }}"
+            data-buttontext="Pay ₹100"
+            data-name="PetCare"
+            data-description="Veterinary Appointment"
+            data-theme.color="#ff6f61">
+        </script>
+    </form>
+</div>
+
+{% endblock %}

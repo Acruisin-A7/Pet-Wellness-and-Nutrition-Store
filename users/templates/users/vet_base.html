@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Petopia - Veterinarian Portal</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/vet.css' %}">
+    <link rel="icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
+</head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-left">
+            <i class="fas fa-paw paw-icon"></i>
+            <span class="brand-name">Petopia</span>
+        </div>
+        <div class="nav-right">
+            <a href="{% url 'home' %}" class="nav-link">View Products</a>
+            <a href="{% url 'vet' %}" class="nav-link">Home</a>
+            <a href="{% url 'vet_login' %}" class="nav-link">Vet Login</a>
+            <a href="{% url 'veterinarian_register' %}" class="nav-link">Vet Register</a>
+        </div>
+    </nav>
+    {% block content %}
+    <!-- Hero Section -->
+    <div class="hero-section">
+        <div class="hero-content">
+            <h1>Expand Your Reach as a Veterinarian</h1>
+            <p>Connect with pet owners, manage your schedule, and grow your practice with Petopia.</p>
+        </div>
+        <div class="hero-image"></div>
+    </div>
+    
+
+    <!-- Benefits Section -->
+<section class="benefits-container">
+    <div class="benefit-item">
+        <h3>Manage Your Profile</h3>
+        <p>Keep your professional details updated, showcase your expertise, and connect with pet owners effortlessly.</p>
+    </div>        
+    <div class="benefit-item">
+        <h3>Manage Appointments</h3>
+        <p>Keep track of your schedule and let pet owners book slots easily.</p>
+    </div>
+    <div class="benefit-item">
+        <h3>Build Your Presence</h3>
+        <p>Join a thriving network of veterinarians and gain visibility in the pet care community.</p>
+    </div>
+    <div class="benefit-item">
+        <h3>Manage Availability</h3>
+        <p>Set your time slots efficiently and manage your availability for pet consultations.</p>
+    </div>
+</section>
+{% endblock %}
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 Petopia. All rights reserved.</p>
+    </footer>
+</body>
+</html>

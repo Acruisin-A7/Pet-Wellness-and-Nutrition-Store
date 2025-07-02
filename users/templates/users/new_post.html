@@ -1,0 +1,16 @@
+{% extends "users/home.html" %} 
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/forum.css' %}">
+<div class="new-post-wrapper">
+    <h1 class="new-post-title">Ask a Pet-Related Question 🐾</h1>
+    <div class="new-post-form-container">
+        <form method="post" class="new-post-form">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn new-post-btn">Post</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

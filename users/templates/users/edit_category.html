@@ -1,0 +1,17 @@
+{% extends 'users/admin_dashboard.html' %}
+{% load static %}
+
+{% block content %}
+<h1>✏️ Edit Category</h1>
+
+<!-- Edit Category Form -->
+<div class="category-form">
+    <form method="POST">
+        {% csrf_token %}
+        <label for="category_name">Name:</label>
+        <input type="text" id="category_name" name="name" value="{{ form.instance.name }}" required>
+        <button type="submit" class="btn btn-success">💾 Save Changes</button>
+        <a href="{% url 'manage_categories' %}" class="btn btn-secondary">🔙 Cancel</a>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'users/select_date.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="slot-container">
+    <h2>Select a Time Slot</h2>
+    <p>Available slots for Dr. <strong>{{ veterinarian.user.get_full_name }}</strong> on <strong>{{ selected_date }}</strong>:</p>
+
+    {% if slots %}
+        <form method="POST" action="{% url 'confirm_booking' vet_id=veterinarian.id selected_date=selected_date %}">
+            {% csrf_token %}
+            <div class="select-slot-container">
+                {% for slot in slots %}
+                    <button type="submit" name="selected_slot" value="{{ slot }}" class="btn">{{ slot }}</button>
+                {% endfor %}
+            </div>
+        </form>
+    {% else %}
+        <p class="no-slots">No available slots for this date.</p>
+    {% endif %}
+
+    <a href="{% url 'select_date' vet_id=veterinarian.id %}" class="btn-secondary">Back</a>
+</div>
+
+{% endblock %}

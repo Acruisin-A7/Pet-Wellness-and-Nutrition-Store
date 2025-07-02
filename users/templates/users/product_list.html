@@ -1,0 +1,31 @@
+{% extends 'users/admin_dashboard.html' %}
+
+{% load static %}
+
+{% block content %}
+<h1>🐾 Product Management</h1>
+<a href="{% url 'product_add' %}" class="btn">Add New Product</a>
+<table class="product-table">
+    <tr>
+        <th>Name</th>
+        <th>Category</th>
+        <th>Price</th>
+        <th>Stock</th>
+        <th>Actions</th>
+    </tr>
+    {% for product in products %}
+    <tr>
+        <td>{{ product.name }}</td>
+        <td>{{ product.category.name }}</td>
+        <td>₹{{ product.price }}</td>
+        <td>{{ product.stock }}</td>
+        <td>
+            <a href="{% url 'product_edit' product.id %}" class="edit-btn">Edit</a> | 
+            <a href="{% url 'product_delete' product.id %}" class="delete-btn">Delete</a>
+        </td>
+    </tr>
+    {% empty %}
+    <tr><td colspan="5">No products found.</td></tr>
+    {% endfor %}
+</table>
+{% endblock %}

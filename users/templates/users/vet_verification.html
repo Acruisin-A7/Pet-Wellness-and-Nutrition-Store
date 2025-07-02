@@ -1,0 +1,52 @@
+{% extends 'users/admin_dashboard.html' %}
+{% load static %}
+
+{% block content %}
+
+
+<div class="vet-verification-container">
+    <h2>🐾 Pending Veterinarian Approvals</h2>
+    
+    {% if messages %}
+<div class="messages">
+    {% for message in messages %}
+        {% if "approved" in message or "rejected" in message %}
+        <p class="alert {{ message.tags }}">{{ message }}</p>
+        {% endif %}
+    {% endfor %}
+</div>
+{% endif %}
+
+    <div class="vet-table-wrapper">
+        <table class="vet-table">
+            <thead>
+                <tr>
+                    <th>Username</th>
+                    <th>Email</th>
+                    <th>License No.</th>
+                    <th>Experience</th>
+                    <th>Certification</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for vet in pending_vets %}
+                <tr>
+                    <td>{{ vet.user.username }}</td>
+                    <td>{{ vet.user.email }}</td>
+                    <td>{{ vet.license_number }}</td>
+                    <td>{{ vet.experience }} years</td>
+                    <td><a href="{{ vet.certification.url }}" target="_blank" class="cert-link">View</a></td>
+                    <td class="action-buttons">
+                        <a href="{% url 'verify_veterinarian' vet.id %}" class="approve-btn">Approve</a>
+                        <a href="{% url 'reject_veterinarian' vet.id %}" class="reject-btn">Reject</a>
+                    </td>
+                </tr>
+                {% empty %}
+                <tr><td colspan="6" class="no-pending-vets">No pending registrations.</td></tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

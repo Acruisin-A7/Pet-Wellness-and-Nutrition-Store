@@ -1,0 +1,16 @@
+{% extends 'users/vet_base.html' %}
+
+{% block content %}
+<div class="register-container">
+    <h2>🐶 Join as a Veterinarian</h2>
+    <p>"Every pet deserves a caring vet!" 🐾</p>
+    
+    <form method="post" enctype="multipart/form-data" class="register-form">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="register-btn">Register</button>
+    </form>
+
+    <p>Already have an account? <a href="{% url 'vet_login' %}" class="login-link">Login here</a></p>
+</div>
+{% endblock %}

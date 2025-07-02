@@ -1,0 +1,25 @@
+{% extends 'users/home.html' %}
+{% block content %}
+<div class="container">
+    <h1 class="title">🐾 Our Pet Products 🐾</h1>
+
+    <!-- Search and Filter Form -->
+    <form method="GET" class="filter-form">
+        {{ form.as_p }}
+        <button type="submit" class="btn">Filter</button>
+    </form>
+
+    <div class="product-grid">
+        {% for product in products %}
+        <div class="product-card">
+            <img src="{{ product.image.url }}" alt="{{ product.name }}" class="product-img">
+            <h3>{{ product.name }}</h3>
+            <p>Price: ₹{{ product.price }}</p>
+            <a href="{% url 'product_detail' product.id %}" class="btn btn-primary">View Details</a>
+        </div>
+        {% endfor %}
+    </div>
+   
+
+</div>
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends "users/home.html" %}
+{% load static %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/forum.css' %}">
+<div class="forum-wrapper">
+    <div class="forum-header">
+        <h1 class="forum-title">Pet Forums <span>🐶🐾</span></h1>
+        <a href="{% url 'new_post' %}" class="ask-question-btn">+ Ask a Question</a>
+    </div>
+
+    {% if posts %}
+        <ul class="reddit-style-posts">
+            {% for post in posts %}
+            <li class="reddit-post-card">
+                <div class="reddit-post-content">
+                    <a href="{% url 'forum_detail' post.id %}" class="reddit-post-title">
+                        {{ post.title }}
+                    </a>
+                    <div class="reddit-post-meta">
+                        <span>Posted by</span> <strong>{{ post.user.username }}</strong>
+                        <span>on {{ post.created_at|date:"F d, Y" }} at {{ post.created_at|time:"P" }}</span>
+                    </div>
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p class="empty-message">No posts yet. Be the first to ask!</p>
+    {% endif %}
+</div>
+{% endblock %}

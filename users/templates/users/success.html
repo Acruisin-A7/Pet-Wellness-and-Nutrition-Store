@@ -1,0 +1,9 @@
+{% extends "users/base.html" %}
+{% block content %}
+<div class="container">
+    <h2>🎉 Appointment Confirmed!</h2>
+    <p>Your appointment with <strong>{{ appointment.veterinarian.user.get_full_name }}</strong> on <strong>{{ appointment.date }}</strong> at <strong>{{ appointment.time_slot }}</strong> has been successfully booked.</p>
+    <p>Check your email for confirmation.</p>
+    <a href="/" class="btn">Back to Home</a>
+</div>
+{% endblock %}

@@ -1,0 +1,220 @@
+.profile-container {
+    max-width: 1000px;
+    margin: 60px auto;
+    padding: 30px;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.welcome-section h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.welcome-section p {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.orders-section h3 {
+    font-size: 1.5rem;
+    color: #444;
+    margin-bottom: 20px;
+}
+
+.table-wrapper {
+    overflow-x: auto;
+}
+
+.order-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.order-table thead {
+    background-color: #fef4e8;
+}
+
+.order-table th,
+.order-table td {
+    padding: 12px 15px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+    font-size: 0.95rem;
+}
+
+.order-table tr:nth-child(even) {
+    background-color: #fffaf3;
+}
+
+.btn-download,
+.btn-refund,
+.btn-logout {
+    display: inline-block;
+    padding: 8px 14px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease, transform 0.2s;
+}
+
+.btn-download {
+    background-color: #5bc0de;
+    color: white;
+}
+
+.btn-download:hover {
+    background-color: #31b0d5;
+    transform: scale(1.03);
+}
+
+.btn-refund {
+    background-color: #d9534f;
+    color: white;
+}
+
+.btn-refund:hover {
+    background-color: #c9302c;
+    transform: scale(1.03);
+}
+
+.badge-refund {
+    display: inline-block;
+    background-color: #f0ad4e;
+    color: #222;
+    padding: 6px 10px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.85rem;
+}
+
+.no-orders {
+    color: #999;
+    font-style: italic;
+}
+
+.logout-wrapper {
+    text-align: right;
+    margin-top: 30px;
+}
+
+.btn-logout {
+    background-color: #6c757d;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    transition: background-color 0.3s ease, transform 0.2s;
+}
+
+.btn-logout:hover {
+    background-color: #5a6268;
+    transform: scale(1.03);
+}
+
+.refund-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 20px;
+    background-color: #fffef9;
+}
+
+.refund-box {
+    background: #ffffff;
+    padding: 40px;
+    max-width: 600px;
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.refund-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.refund-form p {
+    margin-bottom: 20px;
+}
+
+.refund-form label {
+    font-weight: 600;
+    margin-bottom: 6px;
+    display: block;
+    color: #444;
+}
+
+.refund-form input[type="text"],
+.refund-form textarea,
+.refund-form select {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #fafafa;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.refund-form textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.refund-form input:focus,
+.refund-form textarea:focus,
+.refund-form select:focus {
+    border-color: #ffae42;
+    outline: none;
+}
+
+.refund-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.btn-refund-submit {
+    background-color: #d9534f;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s;
+}
+
+.btn-refund-submit:hover {
+    background-color: #c9302c;
+    transform: scale(1.03);
+}
+
+.btn-cancel {
+    background-color: #6c757d;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.2s;
+}
+
+.btn-cancel:hover {
+    background-color: #5a6268;
+    transform: scale(1.03);
+}

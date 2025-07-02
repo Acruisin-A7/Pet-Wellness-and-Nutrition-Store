@@ -1,0 +1,160 @@
+{% extends 'users/home.html' %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/product_detail.css' %}">
+
+<div class="product-detail-container">
+
+    <!-- Product Hero Section -->
+    <div class="product-hero">
+        <div class="product-image-wrapper">
+            <div class="image-overlay"></div>
+            <a href="#image-modal" class="image-link">
+                <img src="{{ product.image.url }}" alt="{{ product.name }}" class="product-image">
+            </a>
+        </div>
+
+        <div class="product-info">
+            <div class="product-header">
+                <h1 class="product-title">{{ product.name }}</h1>
+                <div class="product-meta">
+                    <span class="product-rating"><span class="stars">★</span> {{ product.average_rating }}/5</span>
+                    <span class="review-count">({{ reviews|length }} reviews)</span>
+                </div>
+            </div>
+
+            <hr class="divider">
+
+            <div class="price-wrapper">
+                <p class="product-price">₹{{ product.price }}</p>
+                <span class="price-label">Inclusive of all taxes</span>
+            </div>
+
+            <!-- Add to Cart / Buy Now Buttons -->
+            <div class="purchase-actions">
+                <form action="{% url 'add_to_cart' product.id %}" method="post" class="action-form"
+                      onsubmit="{% if not user.is_authenticated %}return showLoginPopup();{% endif %}">
+                    {% csrf_token %}
+                    <label for="cart-quantity" class="visually-hidden">Quantity</label>
+                    <input type="number" id="cart-quantity" name="quantity" value="1" min="1" class="quantity-input">
+                    <button type="submit" class="btn btn-cart">Add to Cart <span>🛒</span></button>
+                </form>
+
+                <form action="{% url 'buy_now' product.id %}" method="post"
+                      onsubmit="{% if not user.is_authenticated %}return showLoginPopup();{% endif %}">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-buy">Buy Now <span>⚡</span></button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Description Section -->
+    <section class="description-container">
+        <h2 class="section-title">Description</h2>
+        <p class="product-description">{{ product.description }}</p>
+    </section>
+
+    <!-- Recommended Products Section -->
+    <section class="recommended-products-container">
+        <h2 class="section-title">Recommended Products</h2>
+        <div class="recommended-products-list">
+            {% for recommended_product in recommended_products %}
+                {% if recommended_product.id != product.id %}
+                    <div class="recommended-product-card">
+                        <a href="{% url 'product_detail' recommended_product.id %}">
+                            <img src="{{ recommended_product.image.url }}" alt="{{ recommended_product.name }}" class="recommended-product-image">
+                            <h3 class="recommended-product-title">{{ recommended_product.name }}</h3>
+                            <p class="recommended-product-price">₹{{ recommended_product.price }}</p>
+                        </a>
+                    </div>
+                {% endif %}
+            {% empty %}
+                <p class="no-recommended">No other products available in this category.</p>
+            {% endfor %}
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="reviews-container">
+        <h2 class="section-title">Customer Reviews</h2>
+
+        <!-- Rating Summary -->
+        <div class="reviews-summary">
+            <div class="rating-overview">
+                <span class="average-rating">{{ product.average_rating }}</span>
+                <span class="stars">★★★★★</span>
+                <span class="rating-text">Based on {{ reviews|length }} reviews</span>
+            </div>
+
+            <div class="rating-breakdown">
+                {% for i in "54321" %}
+                    <div class="rating-bar">
+                        <span class="star-label">{{ i }} star</span>
+                        <div class="bar-container">
+                            <div class="bar-fill" style="width: {% widthratio i 5 100 %}%;"></div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <!-- Review List -->
+        <div class="reviews-list">
+            {% if reviews %}
+                {% for review in reviews %}
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="user-info">
+                                <span class="review-user">{{ review.user.username }}</span>
+                                <span class="verified-badge">✓ Verified</span>
+                            </div>
+                            <span class="review-rating"><span class="stars">★</span> {{ review.rating }}/5</span>
+                        </div>
+                        <p class="review-comment">{{ review.comment }}</p>
+                        <small class="review-date">{{ review.created_at|date:"F j, Y" }}</small>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <p class="no-reviews">No reviews yet. Be the first to share your experience!</p>
+            {% endif %}
+        </div>
+    </section>
+
+    <!-- Review Submission Form -->
+    {% if user.is_authenticated %}
+        <section class="review-form-container">
+            <h3 class="section-title">Write Your Review</h3>
+            <form method="post" class="review-form">
+                {% csrf_token %}
+                <div class="form-grid">
+                    {{ form.as_p }}
+                </div>
+                <button type="submit" class="btn btn-submit">Submit Review</button>
+            </form>
+        </section>
+    {% else %}
+        <p class="auth-message">
+            Please <a href="{% url 'login' %}">log in</a> to share your review.
+        </p>
+    {% endif %}
+
+    <a href="{% url 'home' %}" class="btn btn-back">Back to Shop <span>↺</span></a>
+
+</div>
+
+<!-- Image Modal -->
+<div id="image-modal" class="image-modal">
+    <a href="#" class="close-modal">×</a>
+    <img src="{{ product.image.url }}" alt="{{ product.name }}" class="modal-content">
+</div>
+
+<!-- Login Alert Script -->
+<script>
+    function showLoginPopup() {
+        alert("Please log in to continue.");
+        return false; // Prevent form submission
+    }
+</script>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'users/admin_dashboard.html' %}
+{% load static %}
+
+{% block content %}
+<h1>🔄 Update Order Status for Order #{{ order.id }}</h1>
+
+<form method="POST">
+    {% csrf_token %}
+    <label for="status">Select Status:</label>
+    <select name="status" class="form-control">
+        {% for value, label in order.STATUS_CHOICES %}
+        <option value="{{ value }}" {% if order.status == value %}selected{% endif %}>
+            {{ label }}
+        </option>
+        {% endfor %}
+    </select>
+    <br>
+    <button type="submit" class="btn btn-success">💾 Update Status</button>
+    <a href="{% url 'order_list' %}" class="btn btn-secondary">🔙 Cancel</a>
+</form>
+{% endblock %}

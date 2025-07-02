@@ -1,0 +1,37 @@
+{% extends 'users/admin_dashboard.html' %}
+{% load static %}
+
+{% block content %}
+<h1>📦 Order Management</h1>
+<table class="order-table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>User</th>
+            <th>Date</th>
+            <th>Status</th>
+            <th>Total</th>
+            <th>Payment</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for order in orders %}
+        <tr>
+            <td>{{ order.id }}</td>
+            <td>{{ order.user.username }}</td>
+            <td>{{ order.order_date|date:"Y-m-d H:i" }}</td>
+            <td>{{ order.status }}</td>
+            <td>₹{{ order.total_amount }}</td>
+            <td>{{ order.payment_status|yesno:"Paid,Unpaid" }}</td>
+            <td>
+                <a href="{% url 'order_detail' order.id %}" class="btn btn-info">👁 View</a>
+                <a href="{% url 'update_order_status' order.id %}" class="btn btn-warning">🔄 Update</a>
+            </td>
+        </tr>
+        {% empty %}
+        <tr><td colspan="7">No orders found.</td></tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

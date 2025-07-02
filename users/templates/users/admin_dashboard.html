@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/admin_styles.css' %}">
+</head>
+<body>
+    <div class="admin-dashboard">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <h2>🐾 Admin Panel</h2>
+            <nav class="admin-links">
+                <a href="{% url 'product_list' %}">Manage Products</a>
+                <a href="{% url 'order_list' %}">Manage Orders</a>
+                <a href="{% url 'manage_categories' %}">Manage Categories</a>
+                <a href="{% url 'pending_veterinarians' %}">Verify Veterinarians</a>
+                <a href="{% url 'refund_requests' %}">Process Refunds</a>
+                <a href="{% url 'admin_reviews' %}">Review Moderations</a>
+                <a href="{% url 'audit_logs' %}">Audit Logs</a>
+                <a href="{% url 'sales_report' %}">Sales Reports</a>
+            </nav>
+
+            <!-- Logout Button -->
+            <form action="{% url 'logout' %}" method="post" class="logout-form">
+                {% csrf_token %}
+                <button type="submit" class="logout-btn">Logout</button>
+            </form>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="admin-content">
+            {% block content %}
+            <h1>🐾 Admin Dashboard</h1>
+            {% endblock %}
+        </main>
+    </div>
+</body>
+</html>

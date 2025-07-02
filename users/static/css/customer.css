@@ -1,0 +1,1080 @@
+
+
+/* Header */
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    background-color: white;
+}
+
+
+
+/* Logo inside Navbar */
+.logo-container {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+}
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1a1a1a;
+    padding: 15px 20px;
+    color: white;
+}
+
+/* Petopia branding */
+.nav-left {
+    display: flex;
+    align-items: center;
+}
+
+.paw-icon {
+    color: #FFD700;
+    font-size: 24px;
+    margin-right: 8px;
+}
+
+.brand-name {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+/* Right side of navbar (Links) */
+.nav-right .nav-link {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    margin-left: 15px;
+    font-weight: bold;
+}
+
+.nav-right .nav-link:hover {
+    color: #FFD700;
+}
+
+
+/* Hero Section */
+.hero-section {
+    position: relative;
+    text-align: center;
+    width: 100%;
+    height: 450px; /* Increased height for better fit */
+    overflow: hidden;
+}
+
+/* Hero Image */
+.hero-image {
+    image-rendering: auto;
+    width: 100%;
+    height: auto;
+    max-height: 450px;
+    object-fit: cover;
+    filter: brightness(0.8) blur(2px); /* Reduced blur for clarity */
+}
+
+/* Hero Text (Welcome + Quote) */
+.hero-text {
+    position: absolute;
+    top: 50%;  
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 600px;
+    width: 90%;
+    background: none; /* Removed black overlay */
+}
+
+/* Welcome Message */
+.hero-text h2 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Subtext */
+.hero-text p {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+/* Quote Styling */
+.quote-section {
+    font-style: italic;
+    color: #ffcc00;
+}
+
+
+/* Search Bar Positioning */
+.search-container {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.search-bar {
+    padding: 10px;
+    width: 350px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.search-btn, .filter-btn {
+    padding: 10px 15px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.search-btn {
+    background-color: #ffa500;
+    color: white;
+}
+
+.filter-btn {
+    background-color: #555;
+    color: white;
+}
+
+
+
+
+
+/* General Styling */
+body, html {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Main Content Container */
+main {
+    flex: 1;
+}
+
+/* Product Grid */
+.product-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Product Card */
+.product-card {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    width: 250px;
+    text-align: center;
+}
+
+.product-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.product-card h3 {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.product-card p {
+    font-size: 16px;
+    color: #555;
+}
+
+/* Button */
+.btn-primary {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 15px;
+    background: #ffa500;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #333;
+    color: white;
+    margin-top: auto;
+}
+
+/* Login Page Container */
+.login-container {
+    width: 100%;
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+/* Form Styling */
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Form Group */
+.login-form-group {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+/* Labels */
+.login-form-group label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* Input Fields */
+.login-form input {
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Login Button */
+.login-btn-primary {
+    background-color: #ffa500;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.login-btn-primary:hover {
+    background-color: #ff8c00;
+}
+
+/* Register Link */
+.register-link {
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.register-link a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.register-link a:hover {
+    text-decoration: underline;
+}
+
+/* Register Page Container */
+.register-container {
+    width: 100%;
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+/* Form Styling */
+.register-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Form Group */
+.register-form-group {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+/* Labels */
+.register-form-group label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* Input Fields */
+.register-form input {
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Password Help Text */
+.register-password-rules {
+    font-size: 12px;
+    color: gray;
+}
+
+/* Register Button */
+.register-btn-primary {
+    background-color: #ffa500;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.register-btn-primary:hover {
+    background-color: #ff8c00;
+}
+
+/* Login Link */
+.login-link {
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.login-link a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}
+
+/* About Page Styles */
+.about-container {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Header */
+.about-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.about-header h1 {
+    font-size: 36px;
+    color: #333;
+}
+
+.about-header p {
+    font-size: 18px;
+    color: #777;
+}
+
+/* Content Sections */
+.about-section {
+    margin-bottom: 30px;
+}
+
+.about-section h2 {
+    font-size: 28px;
+    color: #444;
+    border-bottom: 3px solid #ffcc00;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+
+.about-section p, .about-section ul {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.6;
+}
+
+.about-section ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.about-section ul li {
+    padding: 5px 0;
+    font-size: 16px;
+}
+
+/* Login and Veterinarian Sign-Up Prompts */
+.login-prompt, .vet-signup {
+    font-size: 18px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.login-prompt a, .vet-signup a {
+    color: #ffcc00;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.login-prompt a:hover, .vet-signup a:hover {
+    text-decoration: underline;
+}
+
+/* Vision Section */
+.about-section:last-child {
+    text-align: center;
+    font-size: 18px;
+    font-style: italic;
+    color: #333;
+    border-top: 3px solid #ffcc00;
+    padding-top: 20px;
+}
+
+/* Contact Page Styles */
+.contact-container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Header */
+.contact-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.contact-header h1 {
+    font-size: 36px;
+    color: #333;
+}
+
+.contact-header p {
+    font-size: 18px;
+    color: #777;
+}
+
+/* Contact Sections */
+.contact-section {
+    margin-bottom: 30px;
+}
+
+.contact-section h2 {
+    font-size: 24px;
+    color: #444;
+    border-bottom: 3px solid #ffcc00;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+
+.contact-section p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Email & Phone Links */
+.contact-section a {
+    color: #fcfbf9;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.contact-section a:hover {
+    text-decoration: underline;
+}
+
+/* WhatsApp Button */
+.whatsapp-btn {
+    display: inline-block;
+    background: #25d366;
+    color: white;
+    font-size: 16px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.whatsapp-btn i {
+    margin-right: 5px;
+}
+
+.whatsapp-btn:hover {
+    background: #1eb25a;
+}
+
+/* Google Maps */
+iframe {
+    border-radius: 5px;
+}
+
+/* Consultation Page Styling */
+/* Consultation Page Styling */
+.consultation-container {
+    max-width: 1000px;
+    margin: 40px 0; /* Removes auto-centering */
+    padding-left: 40px; /* Moves everything to the left */
+    text-align: left;
+}
+
+.consultation-heading,
+.consultation-subtext {
+    text-align: left; /* Aligns heading & text to the left */
+}
+
+.vet-list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Ensures everything aligns left */
+    gap: 20px;
+}
+
+.vet-card {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    width: 100%;
+    max-width: 600px;
+    transition: transform 0.2s ease-in-out;
+    border-left: 5px solid #ff8c00;
+    overflow: hidden;
+}
+
+.vet-image-container {
+    flex-shrink: 0;
+    width: 120px;
+    height: 120px;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-right: 15px;
+}
+
+.vet-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: 2px solid #ff8c00;
+}
+
+.vet-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+    min-width: 0;
+}
+
+.vet-details {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.clinic-address {
+    display: block;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    max-width: 100%;
+}
+
+.vet-actions {
+    margin-top: 10px;
+    text-align: left;
+}
+
+.vet-btn {
+    background-color: #ff8c00;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    transition: background 0.3s;
+    display: inline-block;
+}
+
+.vet-btn:hover {
+    background-color: #e07b00;
+}
+
+/* General Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f8f8;
+    margin: 0;
+    padding: 0;
+}
+
+/* Centered Container */
+.vet-pay-container {
+    max-width: 500px;
+    background: white;
+    margin: 80px auto;  /* Increased margin for better positioning */
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    border: 2px solid #ff6f61;
+}
+
+/* Heading */
+.vet-pay-container h2 {
+    color: #ff6f61;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+/* Appointment Details */
+.vet-pay-container p {
+    font-size: 18px;
+    color: #333;
+    margin: 10px 0;
+}
+
+/* Strong Text */
+.vet-pay-container strong {
+    color: #ff6f61;
+    font-weight: bold;
+}
+
+/* Razorpay Button Styling */
+#razorpay-form {
+    margin-top: 30px;
+}
+
+/* Razorpay Script Button */
+.razorpay-payment-button {
+    background-color: #ff6f61 !important;
+    color: white !important;
+    border: none !important;
+    padding: 14px 24px !important;
+    font-size: 18px !important;
+    font-weight: bold !important;
+    border-radius: 8px !important;
+    cursor: pointer !important;
+    transition: background 0.3s ease-in-out !important;
+}
+
+.razorpay-payment-button:hover {
+    background-color: #e65a50 !important;
+}
+
+/* General Page Styling */
+body {
+    background: linear-gradient(to right, #fef9f4, #fff8ee);
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Product Container */
+/* Wrapper */
+.product-detail-wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+/* Product Card */
+.product-detailt-card {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+    max-width: 900px;
+    width: 100%;
+    gap: 30px;
+}
+
+/* Product Image */
+.product-detail-image img {
+    max-width: 350px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Product Info */
+.product-detail-info {
+    flex: 1;
+}
+
+.product-detail-info h2 {
+    font-size: 26px;
+    color: #ff6f61;
+    margin-bottom: 10px;
+}
+
+.product-detail-price {
+    font-size: 20px;
+    color: #333;
+    font-weight: bold;
+}
+
+.product-detail-description {
+    font-size: 16px;
+    color: #555;
+    margin-top: 10px;
+}
+
+.product-detail-rating {
+    font-size: 18px;
+    color: #ffa500;
+    margin-top: 8px;
+}
+
+/* Buttons */
+.product-detail-buttons {
+    margin-top: 15px;
+}
+
+.product-detail-btn {
+    display: inline-block;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.add-to-cart {
+    background-color: #ff6f61;
+    color: white;
+    margin-right: 10px;
+}
+
+.add-to-cart:hover {
+    background-color: #e65a50;
+}
+
+.buy-now {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.buy-now:hover {
+    background-color: #388E3C;
+}
+
+/* Reviews Section */
+.reviews-section {
+    max-width: 900px;
+    margin: 40px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.review {
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    border-left: 5px solid #ff6f61;
+}
+
+.review strong {
+    color: #333;
+    font-size: 18px;
+}
+
+.review p {
+    color: #555;
+    margin: 5px 0;
+}
+
+.review small {
+    color: #888;
+}
+
+/* Leave a Review */
+.leave-review {
+    max-width: 900px;
+    margin: 30px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.submit-review {
+    background-color: #007BFF;
+    color: white;
+}
+
+.submit-review:hover {
+    background-color: #0056b3;
+}
+
+/* Back to Shop Button */
+.back-to-shop {
+    display: block;
+    width: 200px;
+    margin: 30px auto;
+    text-align: center;
+    padding: 10px;
+    background-color: #555;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.back-to-shop:hover {
+    background-color: #333;
+}
+
+/* Login Message */
+.login-message {
+    text-align: center;
+    font-size: 16px;
+    color: #444;
+}
+
+.login-message a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+.login-message a:hover {
+    text-decoration: underline;
+}
+
+.error-container {
+    background-color: #fff8f8;
+    border: 1px solid #ffc6c6;
+    border-left: 5px solid #ff6f61;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 2px 6px rgba(255, 111, 97, 0.1);
+}
+
+/* List styling inside the container */
+.error-container ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.error-container li {
+    background-color: #ffe5e5;
+    color: #b00020;
+    padding: 12px 16px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.error-container li::before {
+    content: "⚠️";
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+/* Shared container */
+.forum-wrapper, .forum-container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+/* Header for forum list */
+.forum-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+/* Reddit-style list */
+.reddit-style-posts {
+    list-style: none;
+    padding: 0;
+}
+
+.reddit-post-card {
+    background: #fff;
+    padding: 16px 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+}
+
+.reddit-post-card:hover {
+    transform: translateY(-2px);
+}
+
+.reddit-post-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #0079d3;
+    text-decoration: none;
+}
+
+.reddit-post-title:hover {
+    text-decoration: underline;
+}
+
+.reddit-post-meta {
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 4px;
+}
+
+/* Detail View */
+.forum-post-detail {
+    background: #fff;
+    padding: 20px 25px;
+    border-radius: 10px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+}
+
+.forum-post-title {
+    font-size: 1.6rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.forum-post-content {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.forum-post-meta {
+    font-size: 0.9rem;
+    color: #888;
+}
+
+/* Replies */
+.forum-replies {
+    margin-bottom: 30px;
+}
+
+.reply-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.reply-item {
+    background: #f9f9f9;
+    padding: 15px 20px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.reply-meta {
+    display: block;
+    margin-top: 5px;
+    font-size: 0.85rem;
+    color: #777;
+}
+
+/* Reply form */
+.reply-form-container {
+    background: #fff;
+    padding: 20px 25px;
+    border-radius: 10px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+}
+
+.reply-btn {
+    background-color: #ffb347;
+    color: white;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.reply-btn:hover {
+    background-color: #ff9933;
+}
+
+.login-prompt {
+    margin-top: 20px;
+    font-style: italic;
+    color: #555;
+}
+
+.empty-message {
+    text-align: left;
+    font-style: italic;
+    color: #888;
+}
+
+.ask-question-btn {
+    display: inline-block;
+    background: linear-gradient(to bottom right, #ffcc70, #ffb347);
+    color: #fff;
+    font-weight: 600;
+    padding: 12px 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    align-self: flex-end;
+    margin-top: -40px;
+    margin-bottom: 20px;
+    box-shadow: 0 6px 15px rgba(255, 179, 71, 0.4);
+    font-size: 15px;
+}
+
+.ask-question-btn:hover {
+    background: linear-gradient(to bottom right, #ffb347, #ff9933);
+    box-shadow: 0 8px 18px rgba(255, 179, 71, 0.6);
+    transform: scale(1.03);
+}

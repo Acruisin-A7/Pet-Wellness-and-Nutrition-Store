@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Platform</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static '/styles.css' %}">
+</head>
+<body style="background-image: url('https://example.com/pet_background.jpg'); background-size: cover;">
+    <header>
+        <h1>Welcome to Pet Platform</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            
+            {% if user.is_authenticated %}
+                <li><a href="{% url 'dashboard' %}">Dashboard</a></li>
+                <li><a href="{% url 'logout' %}">Logout</a></li>
+                <li><a href="{% url 'shop' %}">filter</a></li>
+                <li><a href="{% url 'cart_detail' %}">cart</a></li>
+                <li><a href="{% url 'select_veterinarian' %}">vet list</a></li>
+            {% else %}
+                <li><a href="{% url 'login' %}">Login</a></li>
+                <li><a href="{% url 'register' %}">Register</a></li>
+                <li><a href="{% url 'vet' %}" class="vet-btn">Vet</a></li>
+                <li><a href="{% url 'shop' %}">filter</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+    
+    <main>
+        {% block content %}
+        <!-- Content will be added here in different views -->
+        {% endblock %}
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Pet Platform</p>
+    </footer>
+</body>
+</html>
+

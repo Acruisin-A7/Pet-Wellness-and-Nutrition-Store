@@ -1,0 +1,318 @@
+body {
+    background: linear-gradient(to right, #fef9f4, #fff8ee);
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Main container */
+.forum-wrapper {
+    max-width: 900px;
+    margin: 50px auto;
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Header */
+.forum-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+/* Title */
+.forum-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #333;
+    display: flex;
+    align-items: center;
+}
+
+/* Ask Question Button - as updated before */
+.ask-question-btn {
+    background: linear-gradient(to bottom right, #ffcc70, #ffb347);
+    color: #fff;
+    font-weight: 600;
+    padding: 12px 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 15px rgba(255, 179, 71, 0.4);
+    font-size: 15px;
+}
+
+.ask-question-btn:hover {
+    background: linear-gradient(to bottom right, #ffb347, #ff9933);
+    box-shadow: 0 8px 18px rgba(255, 179, 71, 0.6);
+    transform: scale(1.03);
+}
+
+/* Post Cards */
+.reddit-style-posts {
+    list-style: none;
+    padding: 0;
+}
+
+.reddit-post-card {
+    background: #fafafa;
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.reddit-post-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Post Title */
+.reddit-post-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #0077cc;
+    text-decoration: none;
+}
+
+/* Meta info */
+.reddit-post-meta {
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 8px;
+}
+
+/* Empty message */
+.empty-message {
+    font-size: 1.2rem;
+    text-align: center;
+    color: #888;
+    margin-top: 40px;
+}
+
+/* Forum container */
+.forum-container {
+    max-width: 900px;
+    margin: 50px auto;
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Post Detail Section */
+.forum-post-detail {
+    background: #fafafa;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    margin-bottom: 30px;
+}
+
+.forum-post-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.forum-post-content {
+    font-size: 1.1rem;
+    color: #444;
+    margin-bottom: 10px;
+}
+
+.forum-post-meta {
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 10px;
+}
+
+/* Replies Section */
+.forum-replies h2 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.reply-list {
+    list-style: none;
+    padding: 0;
+}
+
+.reply-item {
+    background: #f9f9f9;
+    border-radius: 12px;
+    padding: 15px 20px;
+    margin-bottom: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease;
+}
+
+.reply-item:hover {
+    transform: translateY(-3px);
+}
+
+.reply-meta {
+    display: block;
+    margin-top: 10px;
+    font-size: 0.85rem;
+    color: #777;
+}
+
+/* Reply Form Section */
+.reply-form-container {
+    margin-top: 40px;
+    background: #fefefe;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.07);
+}
+
+.reply-form h3 {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.reply-form textarea,
+.reply-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+}
+
+/* Button */
+.reply-btn {
+    background: linear-gradient(to bottom right, #ffcc70, #ffb347);
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 15px rgba(255, 179, 71, 0.4);
+}
+
+.reply-btn:hover {
+    background: linear-gradient(to bottom right, #ffb347, #ff9933);
+    transform: scale(1.05);
+}
+
+/* Login Prompt */
+.login-prompt {
+    margin-top: 30px;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.login-prompt a {
+    color: #0077cc;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.login-prompt a:hover {
+    text-decoration: underline;
+}
+
+/* Empty replies message */
+.empty-message {
+    font-size: 1rem;
+    color: #999;
+    text-align: center;
+    margin-top: 15px;
+}
+
+body {
+    background: linear-gradient(to right, #fff8ee, #fef9f4);
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.new-post-wrapper {
+    max-width: 750px;
+    margin: 60px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.new-post-title {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+
+.new-post-form-container {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.new-post-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.new-post-form-container form p {
+    margin: 0;
+}
+
+.new-post-form label {
+    font-weight: 600;
+    margin-bottom: 6px;
+    display: block;
+    color: #444;
+}
+
+.new-post-form input[type="text"],
+.new-post-form textarea,
+.new-post-form input,
+.new-post-form select {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #fafafa;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.new-post-form textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.new-post-form input[type="text"]:focus,
+.new-post-form textarea:focus {
+    border-color: #ffae42;
+    outline: none;
+}
+
+.new-post-btn {
+    background: linear-gradient(to bottom right, #ffcc70, #ffb347);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 15px rgba(255, 179, 71, 0.4);
+    width: 100%;
+}
+
+.new-post-btn:hover {
+    background: linear-gradient(to bottom right, #ffb347, #ff9933);
+    transform: scale(1.02);
+}

@@ -1,0 +1,39 @@
+{% extends "users/home.html" %}
+
+{% load static %}
+
+{% block content %}
+<div class="consultation-container">
+    <h2 class="consultation-heading">Choose a trusted veterinarian for your pet's health and well-being.</h2>
+    <p class="consultation-subtext">Select a Veterinarian: </p>
+
+    <div class="vet-list">
+        {% for vet in veterinarians %}
+        <div class="vet-card">
+            <div class="vet-image-container">
+                {% if vet.profile_photo %}
+                    <img src="{{ vet.profile_photo.url }}" alt="{{ vet.user.get_full_name }}" class="vet-photo">
+                {% else %}
+                    <img src="{% static 'images/default-vet.png' %}" alt="Default Vet" class="vet-photo">
+                {% endif %}
+            </div>
+        
+            <div class="vet-info">
+                <div class="vet-details">
+                    <h3>Dr. {{ vet.user.get_full_name }}</h3>
+                    <p><strong>Specialization:</strong> {{ vet.specialization }}</p>
+                    <p><strong>Experience:</strong> {{ vet.experience }} years</p>
+                    <p><strong>Phone:</strong> {{ vet.phone }}</p>
+                    <p><strong>Available Days:</strong> {{ vet.vetavailability.available_days }}</p>
+                    <p><strong>Time:</strong> {{ vet.vetavailability.start_time }} - {{ vet.vetavailability.end_time }}</p>
+                    <p><strong>Clinic Address:</strong> <span class="clinic-address">{{ vet.clinic_address }}</span></p>
+                </div>
+                <div class="vet-actions">
+                    <a href="{% url 'select_date' vet.id %}" class="btn vet-btn">Select</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

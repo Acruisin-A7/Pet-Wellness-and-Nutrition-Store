@@ -1,0 +1,62 @@
+{% extends "users/home.html" %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/profile.css' %}">
+
+<div class="profile-container">
+    <div class="welcome-section">
+        <h2>Welcome, {{ user.username }}!</h2>
+        <p>Here you can view your orders.</p>
+    </div>
+
+    <div class="orders-section">
+        <h3>Your Orders</h3>
+        {% if orders %}
+        <div class="table-wrapper">
+            <table class="order-table">
+                <thead>
+                    <tr>
+                        <th>Order ID</th>
+                        <th>Date</th>
+                        <th>Total</th>
+                        <th>Status</th>
+                        <th>Payment</th>
+                        <th>Invoice</th>
+                        <th>Refund</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for order in orders %}
+                    <tr>
+                        <td>#{{ order.id }}</td>
+                        <td>{{ order.order_date|date:"Y-m-d H:i" }}</td>
+                        <td>₹{{ order.total_amount }}</td>
+                        <td>{{ order.status }}</td>
+                        <td>{{ order.payment_status|yesno:"Paid,Unpaid" }}</td>
+                        <td>
+                            {% if order.payment_status %}
+                            <a href="{% url 'download_invoice' order.id %}" class="btn-download">Download</a>
+                            {% endif %}
+                        </td>
+                        <td>
+                            {% if order.payment_status and not order.refund %}
+                            <a href="{% url 'request_refund' order.id %}" class="btn-refund">Request Refund</a>
+                            {% elif order.refund %}
+                            <span class="badge-refund">Refund {{ order.refund.status|title }}</span>
+                            {% endif %}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% else %}
+        <p class="no-orders">You haven’t placed any orders yet.</p>
+        {% endif %}
+    </div>
+
+    <div class="logout-wrapper">
+        <a href="{% url 'logout' %}" class="btn-logout">Logout</a>
+    </div>
+</div>
+{% endblock %}

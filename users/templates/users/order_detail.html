@@ -1,0 +1,37 @@
+{% extends 'users/admin_dashboard.html' %}
+{% load static %}
+
+{% block content %}
+<h1>📝 Order #{{ order.id }} Details</h1>
+
+<p><strong>User:</strong> {{ order.user.username }}</p>
+<p><strong>Order Date:</strong> {{ order.order_date|date:"Y-m-d H:i" }}</p>
+<p><strong>Status:</strong> {{ order.status }}</p>
+<p><strong>Total Amount:</strong> ₹{{ order.total_amount }}</p>
+<p><strong>Payment Status:</strong> {{ order.payment_status|yesno:"Paid,Unpaid" }}</p>
+
+<h2>📦 Order Items:</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Product</th>
+            <th>Quantity</th>
+            <th>Price (₹)</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for item in order.order_items.all %}
+
+        <tr>
+            <td>{{ item.product.name }}</td>
+            <td>{{ item.quantity }}</td>
+            <td>{{ item.price }}</td>
+        </tr>
+        {% empty %}
+        <tr><td colspan="3">No items found.</td></tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<a href="{% url 'order_list' %}" class="btn btn-secondary">⬅ Back to Orders</a>
+{% endblock %}

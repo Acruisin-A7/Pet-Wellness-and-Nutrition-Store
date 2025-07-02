@@ -1,0 +1,16 @@
+{% extends "users/checkout.html" %}
+
+{% block content %}
+<div class="success-container">
+    <h2 class="success-title">🎉 Order Placed Successfully!</h2>
+    <p class="success-subtitle">Thank you for your order, <strong>{{ order.user.username }}</strong>!</p>
+
+    <div class="order-details">
+        <p class="detail-item"><span class="detail-label">Order ID:</span> {{ order.id }}</p>
+        <p class="detail-item"><span class="detail-label">Total Amount:</span> ₹{{ order.total_amount }}</p>
+        <p class="detail-item"><span class="detail-label">Payment Status:</span> Paid</p>
+    </div>
+
+    <a href="{% url 'download_invoice' order.id %}" class="invoice-btn">Download Invoice</a>
+</div>
+{% endblock %}

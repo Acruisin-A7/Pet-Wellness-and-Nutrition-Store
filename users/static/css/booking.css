@@ -1,0 +1,173 @@
+/* General Styles */
+body {
+    background: linear-gradient(to right, #fef9f4, #fff8ee);
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Container */
+.container {
+    max-width: 600px;
+    background: white;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Heading */
+.container h2 {
+    color: #ff8c00;
+}
+
+/* Date Picker */
+.date-picker {
+    width: 80%;
+    padding: 10px;
+    margin: 15px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Next Button */
+.btn {
+    background-color: #ff8c00;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    display: block;
+    width: auto; /* Change from 100% */
+    max-width: 80%; /* Ensures it fits inside the container */
+    margin: 10px auto; /* Centers the button */
+    text-align: center;
+    text-decoration: none;
+}
+
+.btn:hover {
+    background-color: #e07b00;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #333;
+    color: white;
+    margin-top: auto;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1a1a1a;
+    padding: 15px 20px;
+    color: white;
+}
+
+/* Petopia branding */
+.nav-left {
+    display: flex;
+    align-items: center;
+}
+
+.paw-icon {
+    color: #FFD700;
+    font-size: 24px;
+    margin-right: 8px;
+}
+
+.brand-name {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+/* Right side of navbar (Links) */
+.nav-right .nav-link {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    margin-left: 15px;
+    font-weight: bold;
+}
+
+.nav-right .nav-link:hover {
+    color: #FFD700;
+}
+
+/* Container */
+.slot-container {
+    max-width: 600px;
+    background: white;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Heading */
+.slot-container h2 {
+    color: #ff8c00;
+    margin-bottom: 10px;
+}
+
+/* Slot Container */
+.select-slot-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+/* Slot Buttons */
+.select-slot-container .btn {
+    background-color: #ff8c00;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.select-slot-container .btn:hover {
+    background-color: #e07b00;
+}
+
+/* No Slots Message */
+.no-slots {
+    color: #d9534f;
+    font-weight: bold;
+}
+
+/* Back Button */
+.btn-secondary {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    display: inline-block;
+    margin-top: 20px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn-secondary:hover {
+    background-color: #555;
+}

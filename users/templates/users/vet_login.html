@@ -1,0 +1,33 @@
+{% extends "users/vet_base.html" %}
+
+{% block content %}
+<br>
+<br>
+<div class="register-container">
+    <h2 class="text-center">🐾 Veterinarian Login</h2>
+
+    {% if messages %}
+    {% for message in messages %}
+        {% if "invalid password" in message|stringformat:"s"|lower or "invalid username" in message|stringformat:"s"|lower %}
+            <div class="alert alert-danger">{{ message }}</div>
+        {% endif %}
+    {% endfor %}
+{% endif %}
+
+    <form method="post" class="register-form">
+        {% csrf_token %}
+        
+        <label for="username">Username</label>
+        <input type="text" name="username" id="username" required>
+
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" required>
+
+        <button type="submit" class="register-btn">Login</button>
+    </form>
+
+    <p class="text-center">
+        Don't have an account? <a href="{% url 'veterinarian_register' %}" class="login-link">Register here</a>
+    </p>
+</div>
+{% endblock %}

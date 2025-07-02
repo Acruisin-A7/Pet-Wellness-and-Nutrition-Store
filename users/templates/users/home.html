@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Petopia</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/customer.css' %}">
+    <link rel="icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-left">
+            <div class="logo-container">
+                <i class="fas fa-paw paw-icon"></i>
+                <span class="brand-name">Petopia</span>
+            </div>
+        </div>
+        <div class="nav-right">
+            <a href="{% url 'home' %}" class="nav-link">Home</a>
+            <a href="{% url 'about_us' %}" class="nav-link">About Us</a> <!-- New About Us Link -->
+
+            {% if user.is_authenticated %}
+                
+                <a href="{% url 'profile' %}" class="nav-link">Profile</a>
+                <a href="{% url 'select_veterinarian' %}" class="nav-link">Consultations</a>
+                <a href="{% url 'forum_list' %}" class="nav-link">Forums</a>
+                <a href="{% url 'cart_detail' %}" class="nav-link">Cart</a>
+                <a href="{% url 'logout' %}" class="nav-link">Logout</a>
+            {% else %}
+                <a href="{% url 'login' %}" class="nav-link">Login</a>
+                <a href="{% url 'register' %}" class="nav-link">Register</a>
+                <a href="{% url 'vet' %}" class="nav-link">Vet</a>
+            {% endif %}
+        </div>
+    </nav>
+
+    {% block content %}
+    <!-- Hero Section -->
+    <div class="hero-section">
+        <img src="{% static 'images/herobg1.jpg' %}" alt="hero-bg" class="hero-image">
+
+        <div class="search-container">
+            <form method="GET" action="{% url 'home' %}">
+                <input type="text" name="q" class="search-bar" placeholder="Search for pet products..." value="{{ request.GET.q }}">
+                <button type="submit" class="search-btn"><i class="fas fa-search"></i></button>
+            </form>
+            <a href="{% url 'shop' %}" class="filter-btn">Filter</a>
+        </div>
+
+        <div class="hero-text">
+            <h2>Welcome to Petopia! 🐾</h2>
+            <p>Your one-stop solution for pet products and veterinarian consultations.</p>
+            <div class="quote-section">
+                <p class="quote">"Animals are such agreeable friends—they ask no questions; they pass no criticisms." - George Eliot</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product Grid Section -->
+    <div class="product-grid">
+        {% for product in products %}
+            <div class="product-card">
+                <img src="{{ product.image.url }}" alt="{{ product.name }}" class="product-img">
+                <h3>{{ product.name }}</h3>
+                <p>Price: ₹{{ product.price }}</p>
+                <a href="{% url 'product_detail' product.id %}" class="btn btn-primary">View Details</a>
+            </div>
+        {% endfor %}
+    </div>
+
+    {% endblock %}
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <a href="{% url 'contact_us' %}" class="footer-link">Contact Us</a> <!-- New Contact Us Link -->
+            <p>&copy; 2025 Petopia</p>
+        </div>
+    </footer>
+
+</body>
+</html>

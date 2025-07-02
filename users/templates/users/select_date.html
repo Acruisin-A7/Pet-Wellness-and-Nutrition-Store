@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Date - Petopia</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/booking.css' %}">
+    <link rel="icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <!-- Navbar (Same as home.html) -->
+    <nav class="navbar">
+        <div class="nav-left">
+            <div class="logo-container">
+                <i class="fas fa-paw paw-icon"></i>
+                <span class="brand-name">Petopia</span>
+            </div>
+        </div>
+        <div class="nav-right">
+            <a href="{% url 'home' %}" class="nav-link">Home</a>
+            <a href="{% url 'about_us' %}" class="nav-link">About Us</a>
+            <a href="{% url 'profile' %}" class="nav-link">Profile</a>
+            <a href="{% url 'select_veterinarian' %}" class="nav-link">Consultations</a>
+            <a href="{% url 'forum_list' %}" class="nav-link">Forums</a>
+            <a href="{% url 'cart_detail' %}" class="nav-link">Cart</a>
+            <a href="{% url 'logout' %}" class="nav-link">Logout</a>
+        </div>
+    </nav>
+<br>
+<br>
+
+    <!-- Content Section -->
+    <div class="container">
+        <h2>Select an Appointment Date</h2>
+        <p>Choose an available date for your appointment with <strong>Dr. {{ veterinarian.user.get_full_name }}</strong>.</p>
+        
+        <input type="date" id="appointment-date" min="{{ today }}" class="date-picker" required>
+        <a id="next-button" class="btn" style="display: none;">Next</a>
+    </div>
+    {%block content%}{%endblock%}
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <a href="{% url 'contact_us' %}" class="footer-link">Contact Us</a>
+            <p>&copy; 2025 Petopia</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById("appointment-date").addEventListener("change", function() {
+            var selectedDate = this.value;
+            var nextButton = document.getElementById("next-button");
+            if (selectedDate) {
+                nextButton.href = "/get-slots/{{ veterinarian.id }}/" + selectedDate;
+                nextButton.style.display = "inline-block";
+            }
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,19 @@
+{% extends 'users/home.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/profile.css' %}">
+
+<div class="refund-container">
+    <div class="refund-box">
+        <h3 class="refund-title">Request Refund for Order #{{ order.id }}</h3>
+        <form method="post" class="refund-form">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <div class="refund-actions">
+                <button type="submit" class="btn-refund-submit">Submit Refund Request</button>
+                <a href="{% url 'profile' %}" class="btn-cancel">Cancel</a>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

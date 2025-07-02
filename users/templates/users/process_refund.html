@@ -1,0 +1,12 @@
+{% extends 'users/admin_dashboard.html' %}
+{% block content %}
+<div class="refund-form-container">
+    <h2>Process Refund for Order {{ refund.order.id }}</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-success">Submit</button>
+        <a href="{% url 'refund_requests' %}" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>
+{% endblock %}
