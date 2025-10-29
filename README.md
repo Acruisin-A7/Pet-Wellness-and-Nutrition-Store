@@ -98,13 +98,13 @@ python manage.py runserver
 ## 📸 Screenshots
 
 ### 🏠 Home Page
-![Home Page](screenshots/homepage.png)
+![Home Page](screenshots/homepage.jpg)
 
 ### 👨‍⚕️ Veterinarian Dashboard
-![Veterinarian Dashboard](screenshots/vet_dashboard.png)
+![Veterinarian Dashboard](screenshots/vet_dashboard.jpg)
 
 ### 🧑‍💼 Admin Dashboard
-![Admin Dashboard](screenshots/admin_dashboard.png)
+![Admin Dashboard](screenshots/admin_dashboard.jpg)
 
 ---
 
