@@ -1,87 +1,34 @@
-from django.core.mail import send_mail
-from django.conf import settings
-from .models import Order
-from io import BytesIO
-from reportlab.lib.pagesizes import letter
-from reportlab.pdfgen import canvas
-import os
-from reportlab.lib import colors
-from reportlab.lib.units import inch
-from reportlab.platypus import Table, TableStyle
-from django.contrib.staticfiles import finders
-from reportlab.platypus import SimpleDocTemplate, Table, TableStyle, Paragraph, Spacer, Image
-from .models import Order  # Import the Order model
-from io import BytesIO  # Import BytesIO
-from reportlab.pdfgen import canvas  # Import canvas
-from reportlab.lib.pagesizes import letter  # Import letter page size
-from reportlab.platypus import SimpleDocTemplate, Table, TableStyle, Paragraph, Spacer, Image  # Import necessary classes from reportlab.platypus
-from reportlab.lib.styles import getSampleStyleSheet  # Import getSampleStyleSheet
-from reportlab.lib import colors  # Import colors
-from django.contrib.staticfiles import finders  # Import finders
-import os 
-from datetime import datetime, timedelta  # Import timedelta
 import csv
-from reportlab.lib.pagesizes import A4
-from reportlab.pdfgen import canvas
-from io import BytesIO
-from reportlab.platypus import SimpleDocTemplate, Table, TableStyle, Spacer, Paragraph, Image  # Import Spacer, Paragraph, Image
-from reportlab.lib.styles import getSampleStyleSheet  # Import getSampleStyleSheet
-from reportlab.lib import colors
-from io import BytesIO
-from reportlab.lib.pagesizes import letter
-from reportlab.pdfgen import canvas
-from reportlab.lib import colors
-from reportlab.platypus import Table, TableStyle
-from reportlab.lib.units import inch
-from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
-from reportlab.platypus import Paragraph, Spacer
-from django.conf import settings
-import os
-
-from reportlab.lib.pagesizes import letter
-from reportlab.lib import colors
-from reportlab.platypus import SimpleDocTemplate, Table, TableStyle, Paragraph, Spacer, Image
-from reportlab.lib.styles import getSampleStyleSheet
-
 import io
 import os
-from django.http import HttpResponse
-from django.utils.timezone import now
-from django.contrib.staticfiles import finders
+from datetime import datetime, timedelta
 
 import matplotlib
 matplotlib.use('Agg')  # Use non-GUI backend before importing pyplot
 import matplotlib.pyplot as plt
-import os
-from io import BytesIO
+
 from django.conf import settings
 from django.contrib.staticfiles import finders
-from reportlab.lib.pagesizes import letter
-from reportlab.pdfgen import canvas
+from django.core.mail import send_mail
+from django.http import FileResponse, HttpResponse
+from django.utils.timezone import now
+
 from reportlab.lib import colors
+from reportlab.lib.pagesizes import A4, letter
+from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
 from reportlab.lib.units import inch
-from reportlab.platypus import Table, TableStyle, Image, Paragraph, SimpleDocTemplate, Spacer
-from users.models import Order
-import os
-from io import BytesIO
-from django.conf import settings
-from django.contrib.staticfiles import finders
-from reportlab.lib.pagesizes import letter
 from reportlab.pdfgen import canvas
-from reportlab.lib import colors
-from reportlab.lib.units import inch
-from reportlab.platypus import Table, TableStyle, Image, Paragraph, SimpleDocTemplate, Spacer
+from reportlab.platypus import (
+    SimpleDocTemplate,
+    Table,
+    TableStyle,
+    Paragraph,
+    Spacer,
+    Image
+)
+
 from users.models import Order
 
-import os
-from io import BytesIO
-from django.http import FileResponse
-from django.contrib.staticfiles import finders
-from reportlab.lib.pagesizes import letter
-from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Table, TableStyle, Image
-from reportlab.lib import colors
-from reportlab.lib.styles import getSampleStyleSheet
-from users.models import Order
 
 # 🟢 Generate Invoice PDF
 def generate_invoice(order_id):
