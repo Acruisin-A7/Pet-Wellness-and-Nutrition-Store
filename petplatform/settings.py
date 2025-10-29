@@ -94,9 +94,9 @@ WSGI_APPLICATION = 'petplatform.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'Your database name',  # Create this database in MySQL
+        'NAME': 'durvesh',  # Create this database in MySQL
         'USER': 'root',
-        'PASSWORD': 'Your password',
+        'PASSWORD': 'drago1234567',
         'HOST': 'localhost',
         'PORT': '3306',
     }
@@ -167,7 +167,7 @@ MESSAGE_TAGS = {
     messages.ERROR: 'alert-danger',
 }
 
-RAZORPAY_KEY_ID = "Your Razorpay Key ID"  # Replace with your Razorpay Key ID
-RAZORPAY_KEY_SECRET = "Your Razorpay Key Secret"  # Replace with your Razorpay Key Secret
+RAZORPAY_KEY_ID = "rzp_test_xSxhgrsPF1FTMD"
+RAZORPAY_KEY_SECRET = "FYxvOv6VxvU7mMhrMjFvajUw"  # Replace with your Razorpay Key Secret
 
 CART_SESSION_ID = 'cart'
