@@ -89,7 +89,7 @@ python manage.py runserver
 
 ## 📋 Usage Instructions
 
-- **Admin Login:** Manage products, orders, veterinarians, and refund approvals.  
+- **Admin Login:** Manage products, orders, veterinarians, and refund approvals (admin and user login from the same login form).  
 - **Veterinarian Login:** Handle consultations, manage schedules, and connect with clients.  
 - **User Login:** Shop products, book consultations, and engage with the pet community.  
 
